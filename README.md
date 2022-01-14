@@ -1,10 +1,10 @@
 
-# Hyperlambda as a Turing complete programming language
+# Threading in Hyperlambda and Magic
 
 Threading in software development implies doing multiple things concurrently, scheduling CPU time for each
-of your threads, according to how the operating system schedules your threads. This concept is often referred
-to as _"multi tasking"_ and is crucial for any modern operating system, and/or programming language. Hyperlambda
-contains several multi tasking related slots.
+of your threads, creating the illusion of having your computer doing multiple times concurrently. This concept
+is often referred to as _"multi tasking"_ and is crucial for any modern operating system, and/or programming
+language. Hyperlambda contains several multi tasking related slots.
 
 ## [fork]
 
@@ -24,7 +24,10 @@ is the understanding of that the total amount of water is still the same, it's o
 into two smaller rivers - Implying you cannot _"do more"_ with multi tasking, you can only
 equally share the same amount of resources as you had before between two different tasks.
 Multi threading does not make your CPU faster, it only schedules your CPU's time on multiple
-things, doing these things concurrently.
+things, doing these things concurrently. However, if you have multiple tasks where each
+individual task needs to wait for IO data, threading typically speeds up your application,
+since it can make multiple requests for IO simultaneously, and have other machines, and/or
+processes working in parallel.
 
 ## [join]
 
@@ -39,9 +42,9 @@ join
       http.get:"https://gaiasoul.com"
 ```
 
-As an analogy for what occurs above, imagine the two rivers from our above **[fork]** analogy,
+As an analogy for what occurs above, imagine the two rivers from our above **[fork]** analogy
 that forked from one larger river into two smaller rivers, for then again to join up and becoming one
-large river again.
+large river again further down.
 
 ## [semaphore]
 
