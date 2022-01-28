@@ -10,7 +10,7 @@
     <Description>Threading support for Hyperlambda and Magic. To use package go to https://polterguy.github.io</Description>
     <PackageProjectUrl>https://github.com/polterguy/magic.lambda</PackageProjectUrl>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>10.0.20</PackageVersion>
+    <PackageVersion>10.0.21</PackageVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/polterguy/magic.lambda.git</RepositoryUrl>
@@ -46,7 +46,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="magic.node.extensions" Version="10.0.20" />
-    <PackageReference Include="magic.signals" Version="10.0.20" />
+    <PackageReference Include="magic.node.extensions" Version="10.0.21" />
+    <PackageReference Include="magic.signals" Version="10.0.21" />
   </ItemGroup>
 </Project>
