@@ -19,9 +19,9 @@ namespace magic.lambda.threading.tests
 {
     public static class Common
     {
-        static public Node Evaluate(string hl, bool maxIterations = true)
+        static public Node Evaluate(string hl)
         {
-            var services = Initialize(maxIterations);
+            var services = Initialize();
             var lambda = HyperlambdaParser.Parse(hl);
             var signaler = services.GetService(typeof(ISignaler)) as ISignaler;
             var evalResult = new Node();
@@ -47,13 +47,9 @@ namespace magic.lambda.threading.tests
 
         #region [ -- Private helper methods -- ]
 
-        static IServiceProvider Initialize(bool maxIterations = true)
+        static IServiceProvider Initialize()
         {
             var services = new ServiceCollection();
-            var mockConfiguration = new Mock<IMagicConfiguration>();
-            if (maxIterations)
-                mockConfiguration.SetupGet(x => x[It.IsAny<string>()]).Returns("60");
-            services.AddTransient((svc) => mockConfiguration.Object);
             services.AddTransient<ISignaler, Signaler>();
             services.AddSingleton(typeof(ThreadRunner));
             var types = new SignalsProvider(InstantiateAllTypes<ISlot>(services));
